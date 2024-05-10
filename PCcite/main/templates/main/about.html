@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Каталог
+{% endblock %}
+
+{% block content %}
+
+<div class="section home-banner">
+      <div class="container">
+
+        <div class="swiper-slide block">
+          <img src="{% static 'img/comp4.png' %}" alt="" width="300px" height="300px">
+          <h2>НОВЫЙ
+            <span>EDELWEISS MSI GAMING</span></h2>
+          <p>ультрасовременный игровой системный блок с i7</p>
+          <a href="">Узнать больше</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="home-products">
+      <div class="container">
+          <h3 class="all_products">Все товары</h3>
+          <div class="products-wrapper">
+
+
+              {% for item in products %}
+              <div class="product">
+              <div class="img">
+                <img src="{{ item.photo.url }}">
+              </div>
+              <a href="{{ item.get_absolute_url }}" class="tittle">{{ item.name }}</a>
+              <p class="description">
+                {{ item.description }}
+              </p>
+              <div class="price">
+                <b>{{ item.price }} &#8381</b>
+              </div>
+              <a href="{{ item.get_absolute_url }}"  class="to-cart">Подробнее</a>
+            </div>
+    {% endfor %}
+
+          </div>
+      </div>
+    </section>
+
+  </div>
+
+  <scipt src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></scipt>
+{% endblock %}

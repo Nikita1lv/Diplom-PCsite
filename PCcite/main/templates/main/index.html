@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Главная
+{% endblock %}
+
+{% block content %}
+<div class="about">
+    <div class="about_txt">
+<p>Добро пожаловать в компьютерный магазин
+<br><span>Компьютер маркет</span></br>
+ <br>МЫ ВСЕГДА РАДЫ ВАС ВИДЕТЬ!!!</br>
+
+</p>
+        </div>
+    <div class="elips">
+        <img src="static/img/comp1.png" width="250px" height="244px">
+        <img src="static/img/comp2.png" width="250px" height="244px">
+        <img src="static/img/comp3.png" width="250px" height="244px">
+    </div>
+</div>
+<style>
+    body{
+  background-size: cover;
+  background-image: url('static/img/central.jpg');
+    }
+  </style>
+{% endblock %}
